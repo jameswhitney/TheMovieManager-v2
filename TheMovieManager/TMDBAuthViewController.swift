@@ -43,7 +43,7 @@ class TMDBAuthViewController: UIViewController {
     
     // MARK: Cancel Auth Flow
     
-    func cancelAuth() {
+    @objc func cancelAuth() {
         dismiss(animated: true, completion: nil)
     }
 }

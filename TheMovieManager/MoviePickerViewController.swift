@@ -48,7 +48,7 @@ class MoviePickerViewController: UIViewController {
     
     // MARK: Dismissals
     
-    func handleSingleTap(_ recognizer: UITapGestureRecognizer) {
+    @objc func handleSingleTap(_ recognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
@@ -57,7 +57,7 @@ class MoviePickerViewController: UIViewController {
         logout()
     }
     
-    func logout() {
+    @objc func logout() {
         dismiss(animated: true, completion: nil)
     }
 }
@@ -114,7 +114,7 @@ extension MoviePickerViewController: UITableViewDelegate, UITableViewDataSource 
         
         let CellReuseId = "MovieSearchCell"
         let movie = movies[(indexPath as NSIndexPath).row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellReuseId) as UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellReuseId) as UITableViewCell?
         
         if let releaseYear = movie.releaseYear {
             cell?.textLabel!.text = "\(movie.title) (\(releaseYear))"
